@@ -1,0 +1,7 @@
+
+- name: Generate MicroK8s join command
+  shell: microk8s add-node | grep "Join node" | awk '{print $5}'
+  register: join_command
+
+- debug:
+    var: join_command.stdout

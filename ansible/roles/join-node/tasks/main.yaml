@@ -1,0 +1,16 @@
+- name: Install snapd (Debian/Ubuntu)
+  apt:
+    name: snapd
+    state: present
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Install snapd (Red Hat/CentOS)
+  package:
+    name: snapd
+    state: present
+  when: ansible_distribution == 'CentOS'
+
+- name: Install MicroK8s
+  snap:
+    name: microk8s
+    state: present

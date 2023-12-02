@@ -1,0 +1,15 @@
+- name: Prepare k8s cluster
+  hosts: cluster
+  become: true
+  become_user: root
+  roles:
+    - role: update-system
+    - role: install-microk8s
+
+- name: Generate join command
+  hosts: masters
+  become: true
+  become_user: root
+  roles:
+    - role: generate-join-command
+  register: join_command

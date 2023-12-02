@@ -1,0 +1,14 @@
+cluster:
+  children:
+    masters:
+      hosts:
+        master-01:
+          ansible_host: 172.191.146.9
+          ansible_user: adminuser
+          ansible_ssh_pass: Password1234!
+    workers:
+      hosts:
+        worker-01:
+          ansible_host: 172.191.145.238
+          ansible_user: adminuser
+          ansible_ssh_pass: Password1234!
